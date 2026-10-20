@@ -1,0 +1,78 @@
+# Copy this complete file to the repository root:
+# .github/workflows/deploy-pages.yml
+# The repository also contains website-source.zip with top-level site/.
+name: Publish personal website from source archive
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out publication repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Unpack website source
+        run: unzip -q website-source.zip
+
+      - name: Use Node.js 24 LTS
+        uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6.0.0
+
+      - name: Set website address
+        shell: bash
+        run: |
+          owner="${GITHUB_REPOSITORY_OWNER,,}"
+          repository="${GITHUB_REPOSITORY#*/}"
+          printf 'SITE_URL=https://%s.github.io\n' "$owner" >> "$GITHUB_ENV"
+          if [[ "${repository,,}" == "$owner.github.io" ]]; then
+            printf 'PAGES_BASE=/\n' >> "$GITHUB_ENV"
+          else
+            printf 'PAGES_BASE=/%s/\n' "$repository" >> "$GITHUB_ENV"
+          fi
+
+      - name: Install locked dependencies
+        working-directory: site
+        run: npm ci
+
+      - name: Build website
+        working-directory: site
+        run: npm run build
+
+      - name: Check public files
+        working-directory: site
+        run: node scripts/validate-public.mjs
+
+      - name: Upload only built website
+        uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5.0.1
