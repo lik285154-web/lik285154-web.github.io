@@ -1,2 +1,45 @@
-# lik285154-web.github.io
-李坤的个人网站：AI 实践、项目、经历与成长记录。
+# 李坤的个人网站
+
+[访问网站](https://lik285154-web.github.io/)
+
+个人介绍、AI 应用项目、实习经历、精选荣誉与成长记录。网页适配电脑和手机，支持明暗主题、互动篮球、动效暂停及证书放大。
+
+## 下载与继续维护
+
+本仓库的 `website-source.zip` 是可恢复的完整网站源码，顶层目录为 `site/`。下载该文件并解压，安装 Node.js 24 LTS 后，在 `site` 中运行：
+
+```bash
+npm ci
+npm run dev
+```
+
+- 自我介绍、经历、奖项和项目：`site/src/content/profile.json`
+- 成长记录：`site/src/content/notes/`
+- 公开图片和证书：`site/public/media/`
+- 完整维护说明：`site/README.md`
+
+## 更新在线网站
+
+在本地 `site` 目录完成修改后运行：
+
+```bash
+npm run check
+npm run build
+npm run package:source
+```
+
+新的 `website-source.zip` 生成在 `site` 上一级。通过本仓库 **Add file → Upload files** 上传同名压缩包并提交，GitHub Actions 会自动解压、构建、检查并发布。进入 **Actions** 确认 build 和 deploy 均成功，再打开网站检查。日常更新不需要改工作流。
+
+压缩包不含 `node_modules`、构建产物、本地测试截图、私人材料、原始简历、私密配置或密钥。源码和公开素材可以随文件夹迁移；本地安装依赖后即可继续。静态网站目前通过内容文件维护，没有网页管理后台。
+
+## 内容说明
+
+展示国家级、省级二等奖及以上荣誉和贵客松最佳技术实现奖。新增创新大赛省金 1 项、省银 2 项依据本人补充展示，证书待补。实习为进行中，结束时间按实际情况更新。原创 AI 小精灵吉祥物结合篮球和 AI 的个人热爱，关于区域可查看本人照片。
+
+## 发布结构
+
+- `website-source.zip`：可编辑网站源码及公开素材。
+- `.github/workflows/deploy-pages.yml`：从压缩包构建并仅发布 `site/dist`。
+- GitHub Pages Source：GitHub Actions。
+
+本仓库保存发布版本的历史提交；解压后的 `site/` 可进一步改为直接源码仓库，但需使用源码版工作流。
