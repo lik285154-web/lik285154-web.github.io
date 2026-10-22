@@ -2,7 +2,7 @@
 
 [访问网站](https://lik285154-web.github.io/)
 
-个人介绍、AI 应用项目、辅修与能力认证、实习经历、精选荣誉与成长记录。网页适配电脑和手机，支持首页小程序扫码体验、AI 小精灵与篮球互动、滚动渐入、卡片光影、明暗主题、动效暂停及证书放大。
+个人介绍、AI 应用项目、辅修与能力认证、实习经历、精选荣誉与成长记录。网页适配电脑和手机，支持首页小程序扫码体验、AI 小精灵与篮球互动、滚动渐入、卡片光影、明暗主题、动效暂停及证书放大。联系区支持电话拨号和电话、QQ 号码复制。
 
 ## 下载与继续维护
 
@@ -16,6 +16,7 @@ npm run dev
 - 自我介绍、经历、奖项和项目：`site/src/content/profile.json`
 - 国家级重点卡：同一内容文件中的 `nationalHonorHighlights`，用 `awardIds` 引用现有奖项
 - 辅修、HCIP 备考与英语能力：同一内容文件中的 `learning`
+- 联系方式：同一内容文件中的 `contact.phone` 和 `contact.qq`；只填写愿意公开的号码
 - 成长记录：`site/src/content/notes/`
 - 公开图片和证书：`site/public/media/`
 - 完整维护说明：`site/README.md`
