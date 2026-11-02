@@ -2,7 +2,7 @@
 
 [访问网站](https://lik285154-web.github.io/)
 
-个人介绍、AI 应用项目、辅修与能力认证、实习经历、精选荣誉与成长记录。网页适配电脑和手机，支持首页小程序扫码体验、AI 小精灵与篮球互动、滚动渐入、卡片光影、明暗主题、动效暂停及证书放大。联系区支持电话拨号和电话、QQ 号码复制。
+个人介绍、AI 应用项目、辅修与能力认证、实习经历、精选荣誉与成长记录。网页适配电脑和手机，支持首页小程序扫码体验、AI 小精灵与篮球互动、精准投篮轨迹与入网短音、滚动渐入、卡片光影、明暗主题、动效暂停及证书放大。联系区支持电话拨号和电话、QQ 号码复制。
 
 ## 下载与继续维护
 
@@ -19,7 +19,7 @@ npm run dev
 - 联系方式：同一内容文件中的 `contact.phone` 和 `contact.qq`；只填写愿意公开的号码
 - 成长记录：`site/src/content/notes/`
 - 公开图片和证书：`site/public/media/`
-- 设计约定：`site/DESIGN.md`；样式：`site/src/styles/global.css` 和 `site/src/styles/enhancements.css`
+- 设计约定：`site/DESIGN.md`；样式：`site/src/styles/global.css` 和 `site/src/styles/enhancements.css`，互动动效与声音在 `site/src/scripts/playground.ts`、`site/src/scripts/interaction-audio.ts`、`site/src/styles/playground.css`
 - 完整维护说明：`site/README.md`
 
 ## 更新在线网站
@@ -42,7 +42,7 @@ npm run package:source
 
 “关于我”是首页主视觉之后的第一正文区，接着展示小程序体验与荣誉。荣誉展示位于小程序体验区之后，创新大赛和挑战杯优先展示；机器人及人工智能大赛、RAICOM、计算机设计大赛分别使用国家级荣誉卡，支持打开对应获奖证书。
 
-独立学习区域重点介绍人工智能华为创新实验班 AI 视觉识别辅修、华为 HCIP 高级工程师认证备考和 CET-6 通过。原创 AI 小精灵吉祥物结合篮球和 AI 的个人热爱，支持鼠标、触屏和键盘打招呼；点击区域保持稳定，连续点击即时反馈。关于区域可查看本人照片。
+独立学习区域重点介绍人工智能华为创新实验班 AI 视觉识别辅修、华为 HCIP 高级工程师认证备考和 CET-6 通过。原创 AI 小精灵吉祥物结合篮球和 AI 的个人热爱，支持鼠标、触屏和键盘打招呼；点击区域保持稳定，连续点击即时反馈。关于区域可查看本人照片。投篮按当前屏幕的实际篮圈位置计算，球经过篮圈时缩小、篮网回弹；音效只在点击时播放，支持独立关闭和记忆设置。
 
 ## 发布结构
 
