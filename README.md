@@ -2,7 +2,7 @@
 
 [访问网站](https://lik285154-web.github.io/)
 
-个人介绍、AI 应用项目、辅修与能力认证、实习经历、精选荣誉与成长记录。网页适配电脑和手机，支持首页小程序扫码体验、AI 小精灵与篮球互动、精准投篮轨迹与入网短音、滚动渐入、卡片光影、明暗主题、动效暂停及证书放大。联系区支持电话拨号和电话、QQ 号码复制。
+个人介绍、AI 应用项目、辅修与能力认证、实习经历、精选荣誉与成长记录。网页适配电脑和手机，支持首页小程序扫码体验、AI 小精灵与篮球互动、深色科技首屏、轻网格光束、真实指标增长、精准投篮轨迹与入网短音、滚动渐入、卡片光影、明暗主题、动效暂停及证书放大。联系区支持电话拨号和电话、QQ 号码复制。
 
 ## 下载与继续维护
 
@@ -19,7 +19,7 @@ npm run dev
 - 联系方式：同一内容文件中的 `contact.phone` 和 `contact.qq`；只填写愿意公开的号码
 - 成长记录：`site/src/content/notes/`
 - 公开图片和证书：`site/public/media/`
-- 设计约定：`site/DESIGN.md`；样式：`site/src/styles/global.css` 和 `site/src/styles/enhancements.css`，互动动效与声音在 `site/src/scripts/playground.ts`、`site/src/scripts/interaction-audio.ts`、`site/src/styles/playground.css`
+- 设计约定：`site/DESIGN.md`；样式：`site/src/styles/global.css` 和 `site/src/styles/enhancements.css`，首页科技舞台在 `site/src/styles/junction.css` 与 `site/src/scripts/junction.ts`，互动动效与声音在 `site/src/scripts/playground.ts`、`site/src/scripts/interaction-audio.ts`、`site/src/styles/playground.css`
 - 完整维护说明：`site/README.md`
 
 ## 更新在线网站
