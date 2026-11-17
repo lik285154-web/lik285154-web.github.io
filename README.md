@@ -4,6 +4,8 @@
 
 个人介绍、AI 应用项目、辅修与能力认证、实习经历、精选荣誉与成长记录。网页适配电脑和手机，支持首页小程序扫码体验、AI 小精灵与篮球互动、原浅色首屏、浅紫轨道细节、主按钮短扫光、精准投篮轨迹与入网短音、滚动渐入、卡片光影、明暗主题、动效暂停及证书放大。联系区支持电话拨号和电话、QQ 号码复制。
 
+章节标题新增一次性描绘路线与星形细节，荣誉卡补充角框；手机荣誉标题和统计上下排列，导航标记当前章节，证书与项目目录具有更充足的触控高度。路线尊重暂停、减少动态效果和无 JavaScript 阅读。整体沿用原配色与字体。
+
 ## 下载与继续维护
 
 本仓库的 `website-source.zip` 是可恢复的完整网站源码，顶层目录为 `site/`。下载该文件并解压，安装 Node.js 24 LTS 后，在 `site` 中运行：
@@ -21,6 +23,7 @@ npm run dev
 - 公开图片和证书：`site/public/media/`
 - 设计约定：`site/DESIGN.md`；样式：`site/src/styles/global.css` 和 `site/src/styles/enhancements.css`，局部线条和按钮细节在 `site/src/styles/details.css`，互动动效与声音在 `site/src/scripts/playground.ts`、`site/src/scripts/interaction-audio.ts`、`site/src/styles/playground.css`
 - 完整维护说明：`site/README.md`
+- 章节SVG与按需GSAP动效：`site/src/components/SectionTrail.astro`、`site/src/scripts/design-details.ts`
 
 ## 更新在线网站
 
@@ -35,6 +38,8 @@ npm run package:source
 新的 `website-source.zip` 生成在 `site` 上一级。通过本仓库 **Add file → Upload files** 上传同名压缩包并提交，GitHub Actions 会自动解压、构建、检查并发布。进入 **Actions** 确认 build 和 deploy 均成功，再打开网站检查。日常更新不需要改工作流。
 
 压缩包不含 `node_modules`、构建产物、本地测试截图、私人材料、原始简历、私密配置或密钥。源码和公开素材可以随文件夹迁移；本地安装依赖后即可继续。静态网站目前通过内容文件维护，没有网页管理后台。
+
+本机预览默认仅绑定 `127.0.0.1`。Enough 为独立项目仓库与 Pages 部署，不复制到本仓库构建目录。
 
 ## 内容说明
 
